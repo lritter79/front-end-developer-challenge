@@ -43,5 +43,4 @@ const PointsSpentP = styled.p`
   margin: 0px;
   font-size: 22px;
   font-weight: lighter;
-  font-family: Inter;
 `;
