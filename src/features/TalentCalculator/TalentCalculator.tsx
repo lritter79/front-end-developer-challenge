@@ -1,23 +1,14 @@
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { MAX_TALENT_POINTS } from "../../constants";
 import { PointCounter } from "../../components/PointCounter/PointCounter";
 import SkillTree from "../../data.json";
 import { TalentTree } from "../TalentTree/TalentTree";
 import { TalentTree as TalentTreeType } from "../../types";
-
-type Talent = {
-  id: string;
-  name: string;
-  description: string;
-  selected: boolean;
-};
-
-type TalentTree = {
-  id: string;
-  name: string;
-  talents: Talent[];
-};
-
+const promise = new Promise<void>((resolve) => {
+  setTimeout(() => {
+    resolve();
+  }, 5000);
+});
 type Action =
   | { type: "select_talent"; treeId: string; talentId: string }
   | { type: "unselect_talent"; treeId: string; talentId: string }
@@ -89,6 +80,18 @@ export const TalentCalculator = () => {
     dispatch({ type: "unselect_talent", treeId, talentId });
     setPointsSpent(pointsSpent - 1);
   };
+
+  useEffect(() => {
+    const pointsSpent = talentTreeState.reduce((acc, tree) => {
+      return (
+        acc +
+        tree.talents.reduce((acc, talent) => {
+          return acc + (talent.selected ? 1 : 0);
+        }, 0)
+      );
+    }, 0);
+    setPointsSpent(pointsSpent);
+  }, [SkillTree.talentTrees]);
 
   return (
     <div>
