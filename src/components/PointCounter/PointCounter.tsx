@@ -10,9 +10,9 @@ export const PointCounter = ({
   return (
     <Container>
       <div>
-        <StyledSpan data-cy="pointsSpent">{pointsSpent}</StyledSpan>
+        <StyledSpan data-cy="points-spent">{pointsSpent}</StyledSpan>
         <StyledSpan>/</StyledSpan>
-        <StyledSpan data-cy="maxPoints">{maxPoints}</StyledSpan>
+        <StyledSpan data-cy="max-points">{maxPoints}</StyledSpan>
       </div>
 
       <PointsSpentP>Points Spent</PointsSpentP>
@@ -42,5 +42,5 @@ const PointsSpentP = styled.p`
   color: #4d5b68;
   margin: 0px;
   font-size: 22px;
-  font-weight: lighter;
+  font-weight: 300;
 `;

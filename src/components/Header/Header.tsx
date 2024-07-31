@@ -3,7 +3,13 @@ import styled from "styled-components";
 export const Header = () => {
   return (
     <Container>
-      <h1>
+      <h1
+        style={{
+          fontWeight: 600,
+          fontSize: "24px",
+          lineHeight: "40px",
+        }}
+      >
         TitanStar Legends - Rune Mastery Loadout Talent Calculator
         9000
       </h1>
@@ -16,4 +22,5 @@ const Container = styled.div`
   color: white;
   text-align: center;
   vertical-align: middle;
+  padding: 0px 100px;
 `;

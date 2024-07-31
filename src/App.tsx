@@ -1,7 +1,7 @@
 import "./App.css";
-import { Header } from "./components/Header/Header";
+import { TalentCalculator } from "./features/TalentCalculator/TalentCalculator";
 function App() {
-  return <Header />;
+  return <TalentCalculator />;
 }
 
 export default App;
