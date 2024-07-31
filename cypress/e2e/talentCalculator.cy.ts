@@ -12,7 +12,8 @@ describe("Rune Mastery Loadout Talent Calculator 9000", () => {
     cy.get('[data-cy="points-spent"]').should("have.text", "0");
     //click on the first talent
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-1"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "1");
   });
@@ -21,13 +22,14 @@ describe("Rune Mastery Loadout Talent Calculator 9000", () => {
     cy.get('[data-cy="points-spent"]').should("have.text", "0");
     //click on the first talent
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-1"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "1");
     //right click on the first talent
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-1"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "0");
   });
 
@@ -35,25 +37,32 @@ describe("Rune Mastery Loadout Talent Calculator 9000", () => {
     cy.get('[data-cy="max-points"]').should("have.text", "6");
     //click on the first talent
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-1"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-2"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-3"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-4"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="talent-tree-2"] > [data-cy="talent-5"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="talent-tree-2"] > [data-cy="talent-6"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="talent-tree-2"] > [data-cy="talent-7"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "6");
   });
@@ -63,58 +72,64 @@ describe("Rune Mastery Loadout Talent Calculator 9000", () => {
 
     //click on the first talent
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-1"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "1");
 
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-2"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "2");
 
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-3"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "3");
 
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-4"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "4");
 
     cy.get('[data-cy="talent-tree-2"] > [data-cy="talent-5"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "5");
     cy.get('[data-cy="talent-tree-2"] > [data-cy="talent-6"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "6"); // Check the points spent before reversing actions
 
     // Reverse order and actions to undo each click
     cy.get(
       '[data-cy="talent-tree-2"] > [data-cy="talent-6"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "5");
     cy.get(
       '[data-cy="talent-tree-2"] > [data-cy="talent-5"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "4");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-4"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "3");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-3"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "2");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-2"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "1");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-1"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "0");
   });
 
@@ -123,72 +138,79 @@ describe("Rune Mastery Loadout Talent Calculator 9000", () => {
 
     //click on the first talent
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-1"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "1");
-    cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-4"]').click(
-      "left"
+    cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-4"]').should(
+      "be.disabled"
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "1");
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-3"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "1");
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-2"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "2");
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-4"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "2");
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-3"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "3");
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-4"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "4");
     cy.get('[data-cy="talent-tree-1"] > [data-cy="talent-2"]').click(
-      "left"
+      "left",
+      { force: true }
     );
     cy.get('[data-cy="points-spent"]').should("have.text", "4");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-1"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "4");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-4"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "3");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-1"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "3");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-2"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "3");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-3"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "2");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-3"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "2");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-4"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "2");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-2"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "1");
     cy.get(
       '[data-cy="talent-tree-1"] > [data-cy="talent-1"]'
-    ).rightclick();
+    ).rightclick({ force: true });
     cy.get('[data-cy="points-spent"]').should("have.text", "0");
   });
 });

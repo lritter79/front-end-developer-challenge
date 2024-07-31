@@ -1,3 +1,4 @@
+import { TalentButton } from "@/components/TalentButton/TalentButton";
 import { TalentTree as TalentTreeType } from "@/types";
 
 export const TalentTree = ({
@@ -13,20 +14,13 @@ export const TalentTree = ({
     <div data-cy={`talent-tree-${talentTree.id}`}>
       {talentTree.name.toLocaleUpperCase()}
       {talentTree.talents.map((talent, index) => (
-        <button
-          data-cy={`talent-${talent.id}`}
+        <TalentButton
           key={talent.id}
-          onClick={() => {
-            if (
-              index === 0 ||
-              talentTree.talents[index - 1].selected
-            ) {
-              if (!talent.selected)
-                handleSelect(talentTree.id, talent.id);
-            }
-          }}
-          onContextMenu={(e) => {
-            e.preventDefault();
+          talent={talent}
+          disabled={
+            index !== 0 && !talentTree.talents[index - 1].selected
+          }
+          handleRightClick={() => {
             if (
               index === talentTree.talents.length - 1 ||
               !talentTree.talents[index + 1].selected
@@ -35,9 +29,16 @@ export const TalentTree = ({
                 handleUnselect(talentTree.id, talent.id);
             }
           }}
-        >
-          {talent.name}
-        </button>
+          handleLeftClick={() => {
+            if (
+              index === 0 ||
+              talentTree.talents[index - 1].selected
+            ) {
+              if (!talent.selected)
+                handleSelect(talentTree.id, talent.id);
+            }
+          }}
+        />
       ))}
     </div>
   );

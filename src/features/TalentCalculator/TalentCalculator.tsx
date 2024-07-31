@@ -1,9 +1,9 @@
 import { useEffect, useReducer, useState } from "react";
-import { MAX_TALENT_POINTS } from "../../constants";
+import { MAX_TALENT_POINTS } from "@/constants";
 import { PointCounter } from "@components/PointCounter/PointCounter";
-import SkillTree from "../../data.json";
+import SkillTree from "@/data.json";
 import { TalentTree } from "../TalentTree/TalentTree";
-import { TalentTree as TalentTreeType } from "../../types";
+import { TalentTree as TalentTreeType } from "@/types";
 
 type Action =
   | { type: "select_talent"; treeId: string; talentId: string }
