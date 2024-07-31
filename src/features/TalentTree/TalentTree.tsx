@@ -1,4 +1,4 @@
-import { TalentTree as TalentTreeType } from "../../types";
+import { TalentTree as TalentTreeType } from "@/types";
 
 export const TalentTree = ({
   talentTree,
