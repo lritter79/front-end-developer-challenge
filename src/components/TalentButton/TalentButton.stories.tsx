@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { TalentButton } from "./TalentButton";
-
+import img from "@assets/talentIcons/icon-2-light.png";
 const meta: Meta<typeof TalentButton> = {
   component: TalentButton,
 };
@@ -20,6 +19,8 @@ export const Default: Story = {
     disabled: false,
     handleLeftClick: () => {},
     handleRightClick: () => {},
+    imageUrl:
+      "https://storybook.js.org/images/placeholders/50x50.png",
   },
 };
 
@@ -34,5 +35,7 @@ export const Disabled: Story = {
     disabled: true,
     handleLeftClick: () => {},
     handleRightClick: () => {},
+    imageUrl:
+      "https://storybook.js.org/images/placeholders/50x50.png",
   },
 };

@@ -1,4 +1,5 @@
 import { Talent } from "@/types";
+import styled from "styled-components";
 export const TalentButton = ({
   talent,
   disabled,
@@ -15,7 +16,7 @@ export const TalentButton = ({
   const { description, name, id, selected } = talent;
 
   return (
-    <button
+    <Button
       className="talent-button"
       disabled={disabled}
       data-cy={`talent-${id}`}
@@ -32,6 +33,12 @@ export const TalentButton = ({
         }}
         src={imageUrl}
       ></img>
-    </button>
+    </Button>
   );
 };
+
+const Button = styled.button<{ $selected?: boolean }>`
+  /* Adapt the colors based on primary prop */
+  filter: ${(props) =>
+    props.$selected ? "" : "contrast(0.7) brightness(0.68)"};
+`;
