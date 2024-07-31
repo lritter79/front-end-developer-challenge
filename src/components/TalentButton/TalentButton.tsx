@@ -27,18 +27,18 @@ export const TalentButton = ({
         void handleRightClick();
       }}
     >
-      <img
-        style={{
-          filter: selected ? "" : "contrast(0.7) brightness(0.68)",
-        }}
-        src={imageUrl}
-      ></img>
+      <StyledImage $selected={selected} src={imageUrl}></StyledImage>
     </Button>
   );
 };
 
-const Button = styled.button<{ $selected?: boolean }>`
-  /* Adapt the colors based on primary prop */
+const Button = styled.button<{ $selected?: boolean }>``;
+
+const StyledImage = styled.img<{ $selected?: boolean }>`
   filter: ${(props) =>
     props.$selected ? "" : "contrast(0.7) brightness(0.68)"};
+  &:hover {
+    filter: ${(props) =>
+      props.$selected ? "" : "contrast(0.7) brightness(0.78)"};
+  }
 `;
