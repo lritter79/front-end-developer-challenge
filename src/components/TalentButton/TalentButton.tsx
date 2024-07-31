@@ -13,6 +13,7 @@ export const TalentButton = ({
   const { description, name } = talent;
   return (
     <button
+      className="talent-button"
       disabled={disabled}
       data-cy={`talent-${talent.id}`}
       title={`${name}: ${description}`}
