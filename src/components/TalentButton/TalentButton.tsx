@@ -4,18 +4,21 @@ export const TalentButton = ({
   disabled,
   handleLeftClick,
   handleRightClick,
+  imageUrl,
 }: {
   talent: Talent;
   disabled: boolean;
   handleLeftClick: () => void;
   handleRightClick: () => void;
+  imageUrl: string;
 }) => {
-  const { description, name } = talent;
+  const { description, name, id } = talent;
+
   return (
     <button
       className="talent-button"
       disabled={disabled}
-      data-cy={`talent-${talent.id}`}
+      data-cy={`talent-${id}`}
       title={`${name}: ${description}`}
       onClick={handleLeftClick}
       onContextMenu={(e) => {
@@ -23,7 +26,7 @@ export const TalentButton = ({
         void handleRightClick();
       }}
     >
-      Icon Button
+      <img src={imageUrl}></img>
     </button>
   );
 };

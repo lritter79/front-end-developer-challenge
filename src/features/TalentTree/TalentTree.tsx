@@ -10,11 +10,26 @@ export const TalentTree = ({
   handleSelect: (treeId: string, talentId: string) => void;
   handleUnselect: (treeId: string, talentId: string) => void;
 }) => {
+  const talentIconsURLs = Object.values(
+    import.meta.glob("@/assets/talentIcons/*.png", {
+      eager: true,
+      query: "?url",
+      import: "default",
+    })
+  ) as string[];
+
   return (
     <div data-cy={`talent-tree-${talentTree.id}`}>
       {talentTree.name.toLocaleUpperCase()}
       {talentTree.talents.map((talent, index) => (
         <TalentButton
+          imageUrl={
+            talentIconsURLs.find((url) =>
+              url.includes(
+                `icon-${talent.id}-${talent.selected ? "light" : "dark"}`
+              )
+            ) ?? ""
+          }
           key={talent.id}
           talent={talent}
           disabled={

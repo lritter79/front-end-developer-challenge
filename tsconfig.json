@@ -16,6 +16,8 @@
          "./src/*"
       ],
       "@components/*": ["src/components/*"],
+      "@assests/*": ["src/assets/*"],
+
     }
   },
 }
