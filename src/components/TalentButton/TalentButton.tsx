@@ -17,6 +17,7 @@ export const TalentButton = ({
 
   return (
     <Button
+      $selected={selected}
       className="talent-button"
       disabled={disabled}
       data-cy={`talent-${id}`}
@@ -32,7 +33,31 @@ export const TalentButton = ({
   );
 };
 
-const Button = styled.button<{ $selected?: boolean }>``;
+const Button = styled.button<{ $selected?: boolean }>`
+  background: ${(props) =>
+    props.$selected
+      ? `linear-gradient(
+    180deg,
+    #6ea8eb 0%,
+    #6ea8eb 50%,
+    #273d55 51%,
+    #698dc3 100%
+  )`
+      : `linear-gradient(
+    180deg,
+    #4b4b4b 0%,
+    #4b4b4b 50%,
+    #3d3d3d 51%,
+    #4c4c4c 100%
+  )`};
+  filter: ${(props) =>
+    props.$selected ? "drop-shadow(0 0 0.25rem #273d55)" : ""};
+  color: inherit;
+  border: none;
+  padding: 5px 5px 1px 5px;
+  cursor: pointer;
+  outline: inherit;
+`;
 
 const StyledImage = styled.img<{ $selected?: boolean }>`
   filter: ${(props) =>

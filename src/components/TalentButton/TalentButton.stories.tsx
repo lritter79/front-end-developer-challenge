@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { TalentButton } from "./TalentButton";
-import img from "@assets/talentIcons/icon-2-light.png";
 const meta: Meta<typeof TalentButton> = {
   component: TalentButton,
 };
