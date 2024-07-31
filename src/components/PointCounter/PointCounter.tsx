@@ -31,6 +31,7 @@ const Container = styled.div`
   width: 175px;
   padding-top: 15px;
   padding-bottom: 15px;
+  margin-left: 75px;
 `;
 
 const StyledSpan = styled.span`

@@ -51,12 +51,15 @@ const Button = styled.button<{ $selected?: boolean }>`
     #4c4c4c 100%
   )`};
   filter: ${(props) =>
-    props.$selected ? "drop-shadow(0 0 0.25rem #273d55)" : ""};
+    props.$selected
+      ? "drop-shadow(0 0 0.25rem #273d55)"
+      : "drop-shadow(0 0 0rem #273d55)"};
   color: inherit;
   border: none;
   padding: 5px 5px 1px 5px;
   cursor: pointer;
   outline: inherit;
+  transition: all 0.5s ease-out;
 `;
 
 const StyledImage = styled.img<{ $selected?: boolean }>`
@@ -66,4 +69,5 @@ const StyledImage = styled.img<{ $selected?: boolean }>`
     filter: ${(props) =>
       props.$selected ? "" : "contrast(0.7) brightness(0.78)"};
   }
+  transition: all 0.5s ease-out;
 `;

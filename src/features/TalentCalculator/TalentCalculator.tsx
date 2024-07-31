@@ -4,6 +4,7 @@ import { PointCounter } from "@components/PointCounter/PointCounter";
 import SkillTree from "@/data.json";
 import { TalentTree } from "../TalentTree/TalentTree";
 import { TalentTree as TalentTreeType } from "@/types";
+import { CenteredRowFlexbox } from "@/components/CenteredRowFlexbox";
 
 type Action =
   | { type: "select_talent"; treeId: string; talentId: string }
@@ -90,26 +91,21 @@ export const TalentCalculator = () => {
   }, [SkillTree.talentTrees]);
 
   return (
-    <div>
-      <button
-        onClick={() => {
-          dispatch({ type: "reset" });
-          setPointsSpent(0);
-        }}
-      >
-        Reset
-      </button>
-      {talentTreeState.map((tree: TalentTreeType) => (
-        <TalentTree
-          talentTree={{
-            ...tree,
-          }}
-          handleSelect={handleSelect}
-          handleUnselect={handleUnselect}
-          key={tree.name}
-        />
-      ))}
+    <CenteredRowFlexbox>
+      <div>
+        {talentTreeState.map((tree: TalentTreeType, index) => (
+          <TalentTree
+            talentTree={{
+              ...tree,
+            }}
+            handleSelect={handleSelect}
+            handleUnselect={handleUnselect}
+            key={tree.name}
+            addBottomMargin={index !== talentTreeState.length - 1}
+          />
+        ))}
+      </div>
       <PointCounter pointsSpent={pointsSpent} maxPoints={maxPoints} />
-    </div>
+    </CenteredRowFlexbox>
   );
 };
