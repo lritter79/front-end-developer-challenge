@@ -25,9 +25,7 @@ export const TalentTree = ({
         <TalentButton
           imageUrl={
             talentIconsURLs.find((url) =>
-              url.includes(
-                `icon-${talent.id}-${talent.selected ? "light" : "dark"}`
-              )
+              url.includes(`icon-${talent.id}-light`)
             ) ?? ""
           }
           key={talent.id}

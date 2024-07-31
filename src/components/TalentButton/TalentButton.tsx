@@ -12,7 +12,7 @@ export const TalentButton = ({
   handleRightClick: () => void;
   imageUrl: string;
 }) => {
-  const { description, name, id } = talent;
+  const { description, name, id, selected } = talent;
 
   return (
     <button
@@ -26,7 +26,12 @@ export const TalentButton = ({
         void handleRightClick();
       }}
     >
-      <img src={imageUrl}></img>
+      <img
+        style={{
+          filter: selected ? "" : "contrast(0.7) brightness(0.68)",
+        }}
+        src={imageUrl}
+      ></img>
     </button>
   );
 };
