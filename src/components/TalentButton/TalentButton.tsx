@@ -18,6 +18,7 @@ export const TalentButton = ({
   return (
     <Button
       $selected={selected}
+      aria-label={talent.name}
       className="talent-button"
       disabled={disabled}
       data-cy={`talent-${id}`}

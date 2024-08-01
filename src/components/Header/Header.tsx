@@ -5,9 +5,11 @@ export const Header = () => {
     <Container>
       <h1
         style={{
-          fontWeight: 600,
+          fontWeight: 400,
           fontSize: "24px",
           lineHeight: "40px",
+          paddingBottom: "8px",
+          paddingTop: "8px",
         }}
       >
         TitanStar Legends - Rune Mastery Loadout Talent Calculator
@@ -18,9 +20,12 @@ export const Header = () => {
 };
 
 const Container = styled.div`
-  background-color: #191b1d;
+  background-color: #1f2123;
   color: white;
   text-align: center;
   vertical-align: middle;
   padding: 0px 100px;
+  margin-bottom: 80px;
+  margin-left: 30px;
+  margin-right: 30px;
 `;
