@@ -1,5 +1,62 @@
-{
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
-}
+[
+  {
+    "id": "1",
+    "name": "Talent Path 1",
+    "talents": [
+      {
+        "id": "1",
+        "name": "Strength Boost",
+        "description": "Increases strength by 10%.",
+        "selected": false
+      },
+      {
+        "id": "2",
+        "name": "Shield Mastery",
+        "description": "Reduces damage taken by 5%.",
+        "selected": false
+      },
+      {
+        "id": "3",
+        "name": "Berserk",
+        "description": "Increases attack speed by 20%.",
+        "selected": false
+      },
+      {
+        "id": "4",
+        "name": "Endurance",
+        "description": "Increases health by 15%.",
+        "selected": false
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Talent Path 2",
+    "talents": [
+      {
+        "id": "5",
+        "name": "Mana Surge",
+        "description": "Increases mana regeneration by 10%.",
+        "selected": false
+      },
+      {
+        "id": "6",
+        "name": "Fireball Mastery",
+        "description": "Increases fireball damage by 20%.",
+        "selected": false
+      },
+      {
+        "id": "7",
+        "name": "Arcane Shield",
+        "description": "Absorbs 10% of incoming damage.",
+        "selected": false
+      },
+      {
+        "id": "8",
+        "name": "Teleportation",
+        "description": "Allows instant teleportation to a short distance.",
+        "selected": false
+      }
+    ]
+  }
+]

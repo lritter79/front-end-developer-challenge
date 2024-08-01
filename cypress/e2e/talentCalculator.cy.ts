@@ -6,6 +6,10 @@ describe("Rune Mastery Loadout Talent Calculator 9000", () => {
     // Since we want to visit the same URL at the start of all our tests,
     // we include it in our beforeEach function so that it runs before each test
     cy.visit("http://localhost:5173");
+    cy.intercept("GET", "/talentTrees", {
+      fixture: "example.json",
+    }).as("talentTrees");
+    cy.wait("@talentTrees");
   });
 
   it("adds points on left click", () => {
