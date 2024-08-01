@@ -8,6 +8,6 @@ Assuming you're running this locally after cloning the repo and you are in the r
 
 1. Create a .env file. Then I recommend copying the contents of .env.example directly into because the serve script is called on port 3000.
 2. Run `npm install` to install the dependencies.
-3. Run `npm run serve` to start the mocked backend.
+3. Run `npm run serve` to start the mocked backend. If this step doesn't work, you may need to install the json-server npm package.
 4. Run `npm run dev` to start the React app.
 5. If you'd like to run Storybook or Cypress, see the scripts section of package.json
