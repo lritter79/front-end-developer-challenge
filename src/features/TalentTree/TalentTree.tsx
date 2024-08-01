@@ -26,6 +26,7 @@ export const TalentTree = ({
   return (
     <CenteredRowFlexbox
       style={{ marginBottom: addBottomMargin ? "50px" : 0 }}
+      data-cy={`talent-tree-${talentTree.id}`}
     >
       <h5 style={{ marginRight: "50px" }}>
         {talentTree.name.toLocaleUpperCase()}

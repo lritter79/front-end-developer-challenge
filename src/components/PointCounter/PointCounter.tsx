@@ -23,7 +23,7 @@ export const PointCounter = ({
 const Container = styled.div`
   background-color: #050709;
   color: white;
-  border: 2px solid #4c4b4a;
+  border: 1px solid #4c4b4a;
   display: flex;
   align-items: center;
   justify-content: center;
