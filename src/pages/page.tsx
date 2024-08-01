@@ -19,34 +19,38 @@ export const Page = () => {
 
   if (isLoading) {
     return (
-      <div style={{ height: "376px" }}>
+      <Container>
         <Header />
         <PulseDiv>
           <CenteredRowFlexbox>Loading...</CenteredRowFlexbox>
         </PulseDiv>
-      </div>
+      </Container>
     );
   }
 
   if (error) {
     return (
-      <div style={{ height: "376px" }}>
+      <Container>
         {"An error has occurred: " + error.message}
-      </div>
+      </Container>
     );
   }
 
   if (!data) {
     return (
-      <div style={{ height: "376px" }}>
+      <Container>
         <Header />
         <CenteredRowFlexbox>No Talents Found</CenteredRowFlexbox>
-      </div>
+      </Container>
     );
   }
 
   return <TalentCalculator talentTrees={data} />;
 };
+
+const Container = styled.div`
+  height: 376px;
+`;
 
 const pulseAnimation = keyframes`
   0% {

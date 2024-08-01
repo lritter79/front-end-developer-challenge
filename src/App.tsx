@@ -10,9 +10,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ErrorBoundary fallback={<span>Something went wrong</span>}>
-        <AppContinar>
+        <Layout>
           <Page />
-        </AppContinar>
+        </Layout>
       </ErrorBoundary>
     </QueryClientProvider>
   );
@@ -20,7 +20,7 @@ function App() {
 
 export default App;
 
-const AppContinar = styled.div`
+const Layout = styled.div`
   width: 1050px;
   background-image: url(${bg});
   background-repeat: repeat;
