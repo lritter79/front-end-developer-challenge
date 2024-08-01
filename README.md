@@ -1,30 +1,13 @@
-# React + TypeScript + Vite
+# Hello Wizards of the Coast
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I threw everything but the kitchen sink at this project, so you could get an idea of what I'm familiar with. For more about me, you can see my resume. Otherwise, just know I'm a fan of your products so I reallt wanted to put my best foot forward
 
-Currently, two official plugins are available:
+# How to run this app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Assuming you're running this locally after cloning the repo and you are in the root directory, here's what you need to do
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Create a .env file. Then I recommend copying the contents of .env.example directly into because the serve script is called on port 3000.
+2. Run `npm install` to install the dependencies.
+3. Run `npm run serve` to start the mocked backend.
+4. Run `npm run dev` to start the React app.
+5. If you'd like to run Storybook or Cypress, see the scripts section of package.json

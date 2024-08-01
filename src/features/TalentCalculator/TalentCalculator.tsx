@@ -1,7 +1,6 @@
 import { useEffect, useReducer, useState } from "react";
 import { MAX_TALENT_POINTS } from "@/constants";
 import { PointCounter } from "@components/PointCounter/PointCounter";
-import SkillTree from "@/data.json";
 import { TalentTree } from "../TalentTree/TalentTree";
 import { TalentTree as TalentTreeType } from "@/types";
 import { CenteredRowFlexbox } from "@/components/CenteredRowFlexbox";
@@ -10,13 +9,16 @@ import { Header } from "@/components/Header/Header";
 type Action =
   | { type: "select_talent"; treeId: string; talentId: string }
   | { type: "unselect_talent"; treeId: string; talentId: string }
-  | { type: "reset" };
+  | { type: "reset" }
+  | { type: "set_talents"; talents: TalentTreeType[] };
 
 const talentTreeReducer = (
   state: TalentTreeType[],
   action: Action
 ): TalentTreeType[] => {
   switch (action.type) {
+    case "set_talents":
+      return action.talents;
     case "select_talent":
       return state.map((tree) =>
         tree.id === action.treeId
@@ -57,13 +59,17 @@ const talentTreeReducer = (
   }
 };
 
-export const TalentCalculator = () => {
+export const TalentCalculator = ({
+  talentTrees,
+}: {
+  talentTrees: TalentTreeType[];
+}) => {
   const maxPoints = MAX_TALENT_POINTS;
   const [pointsSpent, setPointsSpent] = useState(0);
   const pointsRemaining = maxPoints - pointsSpent;
   const [talentTreeState, dispatch] = useReducer(
     talentTreeReducer,
-    SkillTree.talentTrees
+    talentTrees
   );
 
   const handleSelect = (treeId: string, talentId: string) => {

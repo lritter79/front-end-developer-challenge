@@ -35,6 +35,7 @@ export const TalentButton = ({
 };
 
 const Button = styled.button<{ $selected?: boolean }>`
+  z-index: 2;
   background: ${(props) =>
     props.$selected
       ? `linear-gradient(

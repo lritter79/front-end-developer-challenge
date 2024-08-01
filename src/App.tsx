@@ -1,15 +1,20 @@
-import { Suspense } from "react";
 import "./App.css";
-import { TalentCalculator } from "./features/TalentCalculator/TalentCalculator";
 import bg from "@/assets/talent-calc-bg.png";
 import styled from "styled-components";
+import { ErrorBoundary } from "react-error-boundary";
+import { QueryClient, QueryClientProvider } from "react-query"; // Import the QueryClient class
+import { Page } from "@/pages/page";
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <AppContinar>
-        <TalentCalculator />
-      </AppContinar>
-    </Suspense>
+    <QueryClientProvider client={queryClient}>
+      <ErrorBoundary fallback={<span>Something went wrong</span>}>
+        <AppContinar>
+          <Page />
+        </AppContinar>
+      </ErrorBoundary>
+    </QueryClientProvider>
   );
 }
 

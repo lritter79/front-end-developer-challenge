@@ -1,10 +1,22 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const TalentPipe = ({ active }: { active: boolean }) => {
   return <StyledDiv $active={active} />;
 };
 
+const fadeInTranslateAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 100;
+    transform: translateX(0px);
+  }
+`;
+
 const StyledDiv = styled.div<{ $active?: boolean }>`
+  z-index: 1;
   width: 100px;
   height: 13px;
   border-top: ${(props) =>
@@ -15,6 +27,7 @@ const StyledDiv = styled.div<{ $active?: boolean }>`
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 0.5s ease-out;
+  animation: ${fadeInTranslateAnimation} 0.5s ease-out;
   background-position: ${(props) =>
     props.$active ? "left bottom" : "right bottom"};
 `;
