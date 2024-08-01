@@ -1,10 +1,11 @@
 import { useEffect, useReducer, useState } from "react";
-import { MAX_TALENT_POINTS } from "@/constants";
+import { FREQUENCY_ARRAY, MAX_TALENT_POINTS } from "@/constants";
 import { PointCounter } from "@components/PointCounter/PointCounter";
 import { TalentTree } from "../TalentTree/TalentTree";
 import { TalentTree as TalentTreeType } from "@/types";
 import { CenteredRowFlexbox } from "@/components/CenteredRowFlexbox";
 import { Header } from "@/components/Header/Header";
+import { makeSound, makeGlissando } from "@/utils/soundFunctions";
 
 type Action =
   | { type: "select_talent"; treeId: string; talentId: string }
@@ -78,11 +79,13 @@ export const TalentCalculator = ({
     }
     setPointsSpent(pointsSpent + 1);
     dispatch({ type: "select_talent", treeId, talentId });
+    makeSound(FREQUENCY_ARRAY[pointsSpent]);
   };
 
   const handleUnselect = (treeId: string, talentId: string) => {
     dispatch({ type: "unselect_talent", treeId, talentId });
     setPointsSpent(pointsSpent - 1);
+    makeSound(FREQUENCY_ARRAY[pointsSpent]);
   };
 
   useEffect(() => {
@@ -124,6 +127,11 @@ export const TalentCalculator = ({
           style={{ marginTop: "20px", marginBottom: "20px" }}
           onClick={() => {
             dispatch({ type: "reset" });
+            makeGlissando(
+              FREQUENCY_ARRAY[pointsSpent],
+              FREQUENCY_ARRAY[0],
+              pointsSpent
+            );
           }}
           aria-label={"Reset"}
         >

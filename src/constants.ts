@@ -1,1 +1,4 @@
 export const MAX_TALENT_POINTS = 6;
+export const FREQUENCY_ARRAY = [
+  220, 233.0819, 246.9417, 261.6256, 277.1826, 293.6648, 311.127,
+];
