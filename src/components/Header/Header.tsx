@@ -3,21 +3,21 @@ import styled from "styled-components";
 export const Header = () => {
   return (
     <Container>
-      <h1
-        style={{
-          fontWeight: 400,
-          fontSize: "24px",
-          lineHeight: "40px",
-          paddingBottom: "8px",
-          paddingTop: "8px",
-        }}
-      >
+      <StyledH1>
         TitanStar Legends - Rune Mastery Loadout Talent Calculator
         9000
-      </h1>
+      </StyledH1>
     </Container>
   );
 };
+
+const StyledH1 = styled.h1`
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+`;
 
 const Container = styled.div`
   background-color: #1f2123;

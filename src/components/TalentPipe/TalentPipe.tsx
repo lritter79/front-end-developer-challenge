@@ -18,4 +18,3 @@ const StyledDiv = styled.div<{ $active?: boolean }>`
   background-position: ${(props) =>
     props.$active ? "left bottom" : "right bottom"};
 `;
-//  background: ${(props) => (props.$active ? "#2f3133" : "#1a1c1e")};
