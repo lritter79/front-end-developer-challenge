@@ -1,6 +1,6 @@
 # Hello Wizards of the Coast
 
-I threw everything but the kitchen sink at this project, so you could get an idea of what I'm familiar with. For more about me, you can see my resume. Otherwise, just know I'm a fan of your products so I reallt wanted to put my best foot forward
+I threw everything but the kitchen sink at this project, so you could get an idea of what I'm familiar with. For more about me, you can see my [my website](https://my-portfolio-iota-pink.vercel.app/). Otherwise, just know I'm a fan of your products so I really wanted to put my best foot forward!
 
 # How to run this app
 
