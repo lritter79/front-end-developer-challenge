@@ -1,5 +1,5 @@
 import { Talent } from "@/types";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 export const TalentButton = ({
   talent,
   disabled,
@@ -29,13 +29,43 @@ export const TalentButton = ({
         void handleRightClick();
       }}
     >
+      <ShineDiv />
       <StyledImage $selected={selected} src={imageUrl}></StyledImage>
     </Button>
   );
 };
 
+const shine = keyframes`
+  0% {
+    left: -100px;
+    top: 50px;
+  }
+  100% {
+    left: 75px;
+    top: -95px;
+  }
+`;
+
+const ShineDiv = styled.div`
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    white 50%,
+    transparent 100%
+  );
+  left: -100px;
+  top: 50px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform: rotate(45deg);
+  z-index: 10;
+`;
+
 const Button = styled.button<{ $selected?: boolean }>`
   z-index: 2;
+  overflow: hidden;
   background: ${(props) =>
     props.$selected
       ? `linear-gradient(
@@ -62,6 +92,9 @@ const Button = styled.button<{ $selected?: boolean }>`
   cursor: pointer;
   outline: inherit;
   transition: all 0.5s ease-out;
+  &:hover ${ShineDiv} {
+    animation: ${shine} 1.5s forwards;
+  }
 `;
 
 const StyledImage = styled.img<{ $selected?: boolean }>`
